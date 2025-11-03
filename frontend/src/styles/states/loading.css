@@ -1,0 +1,12 @@
+/* Состояние загрузки */
+.loading-spinner {
+    @apply flex justify-center items-center min-h-screen;
+}
+
+.spinner {
+    @apply animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500;
+}
+
+.loading-button {
+    @apply opacity-70 cursor-not-allowed;
+}

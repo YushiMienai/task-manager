@@ -1,0 +1,20 @@
+/* Модальное окно подтверждения удаления */
+.delete-confirmation-modal {
+    @apply fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50;
+}
+
+.delete-confirmation-content {
+    @apply bg-white rounded-lg shadow-xl max-w-md w-full p-6;
+}
+
+.delete-confirmation-title {
+    @apply text-lg font-semibold text-gray-900 mb-2;
+}
+
+.delete-confirmation-message {
+    @apply text-gray-600 mb-6;
+}
+
+.delete-confirmation-actions {
+    @apply flex justify-end gap-3;
+}

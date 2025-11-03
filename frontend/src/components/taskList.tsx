@@ -22,21 +22,19 @@ export const TaskList = ({tasks, onUpdateTask, onDeleteTask, filter, onFilterCha
   ]
 
   return (
-    <div className='bg-white rounded-lg shadow-md p-6'>
-      <div className='flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6 gap-4'>
-        <h3 className='text-xl font-semibold text-gray-800'>
+    <div className='task-list-container'>
+      <div className='task-list-header'>
+        <h3 className='task-list-title'>
           Список задач ({filteredTasks.length})
         </h3>
 
-        <div className='flex flex-wrap gap-2'>
+        <div className='task-list-filters'>
           {filters.map(({key, label, count}) => (
             <button
               key={key || 'all'}
               onClick={() => onFilterChange(key)}
-              className={`px-3 py-1 text-sm rounded-full border transition-colors duration-200 ${
-                filter === key
-                  ? 'bg-blue-500 text-white border-blue-500'
-                  : 'bg-gray-100 text-gray-700 border-gray-300 hover:bg-gray-200'
+              className={`task-filter-button ${
+                filter === key ? 'task-filter-active' : 'task-filter-inactive'
               }`}
             >
               {label} ({count})
@@ -46,9 +44,9 @@ export const TaskList = ({tasks, onUpdateTask, onDeleteTask, filter, onFilterCha
       </div>
 
       {filteredTasks.length === 0 ? (
-        <div className='text-center py-12'>
-          <div className='text-gray-400 text-6xl mb-4'>📝</div>
-          <p className='text-gray-500 text-lg'>
+        <div className='empty-state'>
+          <div className='empty-state-icon'>📝</div>
+          <p className='empty-state-message'>
             {filter ? 'Нет задач с выбранным статусом' : 'Нет задач. Добавьте первую!'}
           </p>
         </div>

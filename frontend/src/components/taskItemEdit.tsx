@@ -14,42 +14,42 @@ interface TaskItemEditProps {
 
 export const TaskItemEdit = ({isUpdating, editForm, onFormChange, onSave, onCancel}: TaskItemEditProps) => {
   return (
-    <div className='bg-white rounded-lg shadow-md p-6 border-2 border-blue-200'>
-      <div className='space-y-4'>
+    <div className='task-edit-form'>
+      <div className='task-edit-fields'>
         <div>
-          <label className='block text-sm font-medium text-gray-700 mb-1'>
+          <label className='form-label'>
             Название задачи
           </label>
           <input
             type='text'
             value={editForm.title}
             onChange={(e) => onFormChange('title', e.target.value)}
-            className='w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500'
+            className='form-input'
             placeholder='Введите название задачи'
           />
         </div>
 
         <div>
-          <label className='block text-sm font-medium text-gray-700 mb-1'>
+          <label className='form-label'>
             Описание
           </label>
           <textarea
             value={editForm.description}
             onChange={(e) => onFormChange('description', e.target.value)}
             rows={3}
-            className='w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500'
+            className='form-textarea'
             placeholder='Введите описание задачи'
           />
         </div>
 
         <div>
-          <label className='block text-sm font-medium text-gray-700 mb-1'>
+          <label className='form-label'>
             Статус
           </label>
           <select
             value={editForm.status}
             onChange={(e) => onFormChange('status', e.target.value)}
-            className='w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500'
+            className='form-select'
           >
             <option value='pending'>Ожидает</option>
             <option value='in_progress'>В работе</option>
@@ -61,14 +61,14 @@ export const TaskItemEdit = ({isUpdating, editForm, onFormChange, onSave, onCanc
           <button
             onClick={onCancel}
             disabled={isUpdating}
-            className='button text-sm font-medium text-gray-700 bg-gray-100 hover:bg-gray-200 disabled:bg-gray-300'
+            className='button button-secondary text-sm font-medium'
           >
             Отмена
           </button>
           <button
             onClick={onSave}
             disabled={isUpdating || !editForm.title.trim()}
-            className='button text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 disabled:bg-blue-400'
+            className='button button-primary text-sm font-medium'
           >
             {isUpdating ? 'Сохранение...' : 'Сохранить'}
           </button>

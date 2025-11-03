@@ -1,0 +1,29 @@
+/* Цветовые темы и семантические классы */
+.theme-danger {
+    @apply bg-red-600 text-white hover:bg-red-700;
+}
+
+.theme-success {
+    @apply bg-green-600 text-white hover:bg-green-700;
+}
+
+.theme-warning {
+    @apply bg-yellow-500 text-white hover:bg-yellow-600;
+}
+
+.theme-info {
+    @apply bg-blue-500 text-white hover:bg-blue-600;
+}
+
+/* Тени и elevation */
+.elevation-low {
+    @apply shadow-md;
+}
+
+.elevation-medium {
+    @apply shadow-lg;
+}
+
+.elevation-high {
+    @apply shadow-xl;
+}

@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+/* Импорт всех стилей */
+@import "./components/buttons.css";
+@import "./components/modals.css";
+@import "./components/forms.css";
+@import "./components/taskList.css";
+@import "./components/taskCard.css";
+@import "./components/auth.css";
+
+@import "./states/loading.css";
+@import "./states/emptyStates.css";
+
+@import "./utilities/responsive.css";
+@import "./utilities/themes.css";

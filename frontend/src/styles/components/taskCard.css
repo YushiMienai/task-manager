@@ -1,0 +1,58 @@
+/* Карточка задачи - режим просмотра */
+.task-card {
+    @apply bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow duration-200;
+}
+
+.task-card-header {
+    @apply flex justify-between items-start mb-3;
+}
+
+.task-card-title {
+    @apply text-lg font-semibold text-gray-800 flex-1 pr-2;
+}
+
+.task-card-actions {
+    @apply flex gap-2;
+}
+
+.task-card-description {
+    @apply text-gray-600 mb-4 leading-relaxed;
+}
+
+.task-card-meta {
+    @apply text-sm text-gray-500 mb-4;
+}
+
+.task-card-footer {
+    @apply flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3;
+}
+
+/* Бейджи статусов задач */
+.status-badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full border text-sm font-medium;
+}
+
+.status-pending {
+    @apply bg-yellow-100 text-yellow-800 border-yellow-300;
+}
+
+.status-in-progress {
+    @apply bg-blue-100 text-blue-800 border-blue-300;
+}
+
+.status-done {
+    @apply bg-green-100 text-green-800 border-green-300;
+}
+
+/* Кнопки смены статуса */
+.status-button-pending {
+    @apply bg-yellow-500 text-white hover:bg-yellow-600;
+}
+
+.status-button-in-progress {
+    @apply bg-blue-500 text-white hover:bg-blue-600;
+}
+
+.status-button-done {
+    @apply bg-green-500 text-white hover:bg-green-600;
+}

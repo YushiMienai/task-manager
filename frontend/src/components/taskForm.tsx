@@ -36,20 +36,20 @@ export const TaskForm = ({onTaskCreated}: TaskFormProps) => {
   return (
     <form
       onSubmit={handleSubmit}
-      className='bg-white rounded-lg shadow-md p-6 sticky top-6'
+      className='task-form'
     >
-      <h3 className='text-xl font-semibold text-gray-800 mb-4'>
+      <h3 className='task-form-title'>
         Добавить новую задачу
       </h3>
 
-      <div className='space-y-4'>
+      <div className='task-form-fields'>
         <div>
           <input
             type='text'
             placeholder='Название задачи*'
             value={title}
             onChange={(e: ChangeEvent<HTMLInputElement>) => setTitle(e.target.value)}
-            className='w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none'
+            className='form-input'
             required
             disabled={isSubmitting}
           />
@@ -61,7 +61,7 @@ export const TaskForm = ({onTaskCreated}: TaskFormProps) => {
             value={description}
             onChange={(e: ChangeEvent<HTMLTextAreaElement>) => setDescription(e.target.value)}
             rows={3}
-            className='w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none resize-none'
+            className='form-textarea'
             disabled={isSubmitting}
           />
         </div>
@@ -69,7 +69,7 @@ export const TaskForm = ({onTaskCreated}: TaskFormProps) => {
         <button
           type='submit'
           disabled={isSubmitting || !title.trim()}
-          className='button w-full bg-blue-500 text-white font-medium hover:bg-blue-600'
+          className='button button-primary w-full font-medium'
         >
           {isSubmitting ? 'Добавление...' : 'Добавить задачу'}
         </button>

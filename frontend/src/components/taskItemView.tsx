@@ -29,20 +29,20 @@ export const TaskItemView = ({task, isUpdating, onEdit, onStatusChange, onDelete
   const statusConfigs = {
     pending: {
       label: 'Ожидает',
-      badgeClass: 'bg-yellow-100 text-yellow-800 border-yellow-200',
-      buttonClass: 'bg-yellow-500 hover:bg-yellow-600',
+      badgeClass: 'status-badge status-pending',
+      buttonClass: 'status-button-pending',
       buttonText: 'В ожидание'
     },
     in_progress: {
       label: 'В работе',
-      badgeClass: 'bg-blue-100 text-blue-800 border-blue-200',
-      buttonClass: 'bg-blue-500 hover:bg-blue-600',
+      badgeClass: 'status-badge status-in-progress',
+      buttonClass: 'status-button-in-progress',
       buttonText: 'В работу'
     },
     done: {
       label: 'Выполнена',
-      badgeClass: 'bg-green-100 text-green-800 border-green-200',
-      buttonClass: 'bg-green-500 hover:bg-green-600',
+      badgeClass: 'status-badge status-done',
+      buttonClass: 'status-button-done',
       buttonText: 'Выполнено'
     }
   }
@@ -51,12 +51,12 @@ export const TaskItemView = ({task, isUpdating, onEdit, onStatusChange, onDelete
 
   return (
     <>
-      <div className='bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow duration-200'>
-        <div className='flex justify-between items-start mb-3'>
-          <h4 className='text-lg font-semibold text-gray-800 flex-1 pr-2'>
+      <div className='task-card'>
+        <div className='task-card-header'>
+          <h4 className='task-card-title'>
             {task.title}
           </h4>
-          <div className='flex gap-2'>
+          <div className='task-card-actions'>
             <button
               onClick={onEdit}
               disabled={isUpdating}
@@ -81,17 +81,17 @@ export const TaskItemView = ({task, isUpdating, onEdit, onStatusChange, onDelete
         </div>
 
         {task.description && (
-          <p className='text-gray-600 mb-4 leading-relaxed'>
+          <p className='task-card-description'>
             {task.description}
           </p>
         )}
 
-        <div className='text-sm text-gray-500 mb-4'>
+        <div className='task-card-meta'>
           Создано: {new Date(task.created_at).toLocaleDateString('ru-RU')}
         </div>
 
-        <div className='flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3'>
-          <div className={`inline-flex items-center px-3 py-1 rounded-full border text-sm font-medium ${currentStatusConfig.badgeClass}`}>
+        <div className='task-card-footer'>
+          <div className={currentStatusConfig.badgeClass}>
             {currentStatusConfig.label}
           </div>
 
@@ -102,7 +102,7 @@ export const TaskItemView = ({task, isUpdating, onEdit, onStatusChange, onDelete
                     key={status}
                     onClick={() => onStatusChange(status as TaskStatus)}
                     disabled={isUpdating}
-                    className={`button text-sm ${config.buttonClass} disabled:bg-gray-400 disabled:cursor-not-allowed text-white`}
+                    className={`button text-sm ${config.buttonClass} text-white`}
                   >
                     {config.buttonText}
                   </button>

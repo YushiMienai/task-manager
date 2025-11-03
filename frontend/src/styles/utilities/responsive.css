@@ -1,0 +1,20 @@
+/* Адаптивные утилиты */
+.responsive-flex-row {
+    @apply flex flex-col sm:flex-row sm:items-center sm:justify-between;
+}
+
+.responsive-flex-col {
+    @apply flex flex-col;
+}
+
+.responsive-gap {
+    @apply gap-4;
+}
+
+.mobile-stack {
+    @apply flex flex-col space-y-4;
+}
+
+.tablet-row {
+    @apply sm:flex-row sm:space-y-0 sm:space-x-4;
+}
