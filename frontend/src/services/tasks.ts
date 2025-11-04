@@ -15,7 +15,6 @@ api.interceptors.request.use(
     if (token) {
       config.headers.Authorization = `Bearer ${token}`
     }
-    console.log('API Request:', config.method?.toUpperCase(), config.url)
     return config
   },
   (error) => {
@@ -25,13 +24,8 @@ api.interceptors.request.use(
 )
 
 api.interceptors.response.use(
-  (response) => {
-    console.log('API Response:', response.status, response.data)
-    return response
-  },
+  (response) => response,
   (error) => {
-    console.error('API Response Error:', error.response?.status, error.message)
-
     if (error.response?.status === 401) {
       authService.logout()
       window.location.href = '/login'
