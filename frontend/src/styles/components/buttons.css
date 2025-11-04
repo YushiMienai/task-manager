@@ -44,3 +44,8 @@
 .button-login:disabled {
     @apply bg-gray-400 cursor-not-allowed;
 }
+
+/* Стили для кнопок в модалках */
+.modal-button {
+    @apply button text-sm font-medium;
+}

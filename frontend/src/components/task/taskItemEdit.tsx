@@ -14,8 +14,8 @@ interface TaskItemEditProps {
 
 export const TaskItemEdit = ({isUpdating, editForm, onFormChange, onSave, onCancel}: TaskItemEditProps) => {
   return (
-    <div className='task-edit-form'>
-      <div className='task-edit-fields'>
+    <div className='form-container task-edit-form'>
+      <div className='form-fields'>
         <div>
           <label className='form-label'>
             Название задачи
@@ -57,18 +57,18 @@ export const TaskItemEdit = ({isUpdating, editForm, onFormChange, onSave, onCanc
           </select>
         </div>
 
-        <div className='flex justify-end gap-2'>
+        <div className='form-actions'>
           <button
             onClick={onCancel}
             disabled={isUpdating}
-            className='button button-secondary text-sm font-medium'
+            className='form-button button-secondary'
           >
             Отмена
           </button>
           <button
             onClick={onSave}
             disabled={isUpdating || !editForm.title.trim()}
-            className='button button-primary text-sm font-medium'
+            className='form-button button-primary'
           >
             {isUpdating ? 'Сохранение...' : 'Сохранить'}
           </button>

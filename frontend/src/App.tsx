@@ -5,11 +5,11 @@ import {TasksPage, LoginPage} from '@pages'
 function App() {
   return (
     <Router>
-      <div className="App">
+      <div className='App'>
         <Routes>
-          <Route path="/login" element={<LoginPage />} />
+          <Route path='/login' element={<LoginPage />} />
           <Route
-            path="/"
+            path='/'
             element={
               <ProtectedRoute>
                 <TasksPage />

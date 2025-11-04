@@ -1,5 +1,5 @@
 import {useNavigate} from 'react-router-dom'
-import {LoginForm, LoginHeader, LoginHint} from '@components'
+import {LoginForm} from '@components'
 import {useLogin} from '@hooks'
 import {LoginData} from '@services'
 
@@ -16,22 +16,23 @@ export const LoginPage = () => {
     }
   }
 
-  const testCredentials: LoginData = {
-    username: 'testuser',
-    password: 'testpassword'
-  }
-
   return (
-    <div className='login-page'>
+    <div className='login-page-container'>
       <div className='login-container'>
-        <LoginHeader />
+        <div className='text-center'>
+          <h2 className='form-title'>Вход в Task Manager</h2>
+        </div>
         <LoginForm
           onSubmit={handleSubmit}
           isLoading={isLoading}
           error={error}
           onErrorDismiss={clearError}
         />
-        <LoginHint credentials={testCredentials} />
+        <div className='text-center'>
+          <p className='text-sm text-gray-600'>
+            Тестовый аккаунт: testuser / testpassword
+          </p>
+        </div>
       </div>
     </div>
   )

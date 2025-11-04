@@ -11,24 +11,24 @@ export const DeleteConfirmationModal = ({isOpen, task, onConfirm, onCancel}: Del
   if (!isOpen) return null
 
   return (
-    <div className='delete-confirmation-modal'>
-      <div className='delete-confirmation-content'>
-        <h3 className='delete-confirmation-title'>
+    <div className='modal-overlay'>
+      <div className='modal-content'>
+        <h3 className='modal-title'>
           Удаление задачи
         </h3>
-        <p className='delete-confirmation-message'>
+        <p className='modal-message'>
           Вы уверены, что хотите удалить задачу <span className='font-semibold'>'{task.title}'</span>? Это действие нельзя отменить.
         </p>
-        <div className='delete-confirmation-actions'>
+        <div className='modal-actions'>
           <button
             onClick={onCancel}
-            className='button button-secondary text-sm font-medium'
+            className='modal-button button-secondary'
           >
             Отмена
           </button>
           <button
             onClick={onConfirm}
-            className='button button-danger text-sm font-medium'
+            className='modal-button button-danger'
           >
             Удалить
           </button>

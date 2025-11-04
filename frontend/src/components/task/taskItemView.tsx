@@ -1,7 +1,7 @@
 import {useState} from 'react'
 import {Task, TaskStatus} from '@types'
-import {DeleteConfirmationModal} from './DeleteConfirmationModal'
-import {Icon} from './icon'
+import {DeleteConfirmationModal} from '../deleteConfirmationModal'
+import {Icon} from '../icon'
 
 interface TaskItemViewProps {
   task: Task
@@ -52,7 +52,7 @@ export const TaskItemView = ({task, isUpdating, onEdit, onStatusChange, onDelete
 
   return (
     <>
-      <div className='task-card'>
+      <div className='card card-hover task-card'>
         <div className='task-card-header'>
           <h4 className='task-card-title'>
             {task.title}
@@ -61,18 +61,18 @@ export const TaskItemView = ({task, isUpdating, onEdit, onStatusChange, onDelete
             <button
               onClick={onEdit}
               disabled={isUpdating}
-              className='task-card-action-button task-card-action-edit'
+              className='small-button task-card-action-button task-card-action-edit'
               title='Редактировать задачу'
             >
-              <Icon name="edit" />
+              <Icon name='edit' />
             </button>
             <button
               onClick={handleDeleteClick}
               disabled={isUpdating}
-              className='task-card-action-button task-card-action-delete'
+              className='small-button task-card-action-button task-card-action-delete'
               title='Удалить задачу'
             >
-              <Icon name="delete" />
+              <Icon name='delete' />
             </button>
           </div>
         </div>

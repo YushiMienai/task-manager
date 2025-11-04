@@ -28,13 +28,13 @@ export const TaskList = ({tasks, onUpdateTask, onDeleteTask, filter, onFilterCha
           Список задач ({filteredTasks.length})
         </h3>
 
-        <div className='task-list-filters'>
+        <div className='filter-container'>
           {filters.map(({key, label, count}) => (
             <button
               key={key || 'all'}
               onClick={() => onFilterChange(key)}
-              className={`task-filter-button ${
-                filter === key ? 'task-filter-active' : 'task-filter-inactive'
+              className={`filter-button ${
+                filter === key ? 'filter-active' : 'filter-inactive'
               }`}
             >
               {label} ({count})
@@ -45,8 +45,8 @@ export const TaskList = ({tasks, onUpdateTask, onDeleteTask, filter, onFilterCha
 
       {filteredTasks.length === 0 ? (
         <div className='empty-state'>
-          <div className='empty-state-icon'>📝</div>
-          <p className='empty-state-message'>
+          <div className='empty-icon'>📝</div>
+          <p className='empty-message'>
             {filter ? 'Нет задач с выбранным статусом' : 'Нет задач. Добавьте первую!'}
           </p>
         </div>

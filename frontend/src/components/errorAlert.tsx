@@ -5,11 +5,11 @@ interface ErrorAlertProps {
 
 export const ErrorAlert = ({message, onDismiss}: ErrorAlertProps) => {
   return (
-    <div className='error-alert'>
-      <span className='error-alert-message'>{message}</span>
+    <div className='alert alert-error'>
+      <span className='alert-message'>{message}</span>
       <button
         onClick={onDismiss}
-        className='error-alert-dismiss'
+        className='alert-dismiss'
         aria-label='Закрыть уведомление'
       >
         ×

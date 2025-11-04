@@ -20,15 +20,15 @@ export const LoginForm = ({onSubmit, isLoading, error, onErrorDismiss}: LoginFor
   const isFormValid = username.trim() && password.trim()
 
   return (
-    <form className='login-form' onSubmit={handleSubmit}>
+    <form className='form-fields' onSubmit={handleSubmit}>
       {error && (
-        <div className='login-error'>
+        <div className='alert login-error'>
           <span>{error}</span>
           {onErrorDismiss && (
             <button
               type='button'
               onClick={onErrorDismiss}
-              className='login-error-dismiss'
+              className='alert-dismiss login-error-dismiss'
               aria-label='Закрыть сообщение об ошибке'
             >
               ×
@@ -37,14 +37,14 @@ export const LoginForm = ({onSubmit, isLoading, error, onErrorDismiss}: LoginFor
         </div>
       )}
 
-      <div className='login-fields'>
+      <div>
         <div>
           <input
             type='text'
             required
             value={username}
             onChange={(e) => setUsername(e.target.value)}
-            className='login-input login-input-top'
+            className='form-input form-input'
             placeholder='Имя пользователя'
             disabled={isLoading}
             autoComplete='username'
@@ -56,7 +56,7 @@ export const LoginForm = ({onSubmit, isLoading, error, onErrorDismiss}: LoginFor
             required
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className='login-input login-input-bottom'
+            className='form-input'
             placeholder='Пароль'
             disabled={isLoading}
             autoComplete='current-password'

@@ -1,7 +1,7 @@
 import {useState} from 'react'
 import {Task, TaskStatus} from '@types'
-import {TaskItemView} from './TaskItemView'
-import {TaskItemEdit} from './TaskItemEdit'
+import {TaskItemView} from './taskItemView'
+import {TaskItemEdit} from './taskItemEdit'
 
 interface TaskItemProps {
   task: Task

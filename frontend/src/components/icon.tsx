@@ -5,10 +5,10 @@ export type IconName = keyof typeof ICONS
 interface IconProps {
   name: IconName
   className?: string
-  size?: number
+  size?: number | string
 }
 
-export const Icon = ({name, className = "w-5 h-5", size}: IconProps) => {
+export const Icon = ({name, className = 'w-5 h-5', size}: IconProps) => {
   const icon = ICONS[name]
 
   return (
@@ -16,13 +16,13 @@ export const Icon = ({name, className = "w-5 h-5", size}: IconProps) => {
       className={className}
       width={size}
       height={size}
-      fill="none"
-      stroke="currentColor"
+      fill='none'
+      stroke='currentColor'
       viewBox={icon.viewBox}
     >
       <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
+        strokeLinecap='round'
+        strokeLinejoin='round'
         strokeWidth={2}
         d={icon.path}
       />

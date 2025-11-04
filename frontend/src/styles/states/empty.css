@@ -1,0 +1,16 @@
+/* Пустые состояния */
+.empty-state {
+    @apply text-center py-12;
+}
+
+.empty-icon {
+    @apply text-gray-400 text-6xl mb-4;
+}
+
+.empty-message {
+    @apply text-gray-500 text-lg;
+}
+
+.empty-message-filtered {
+    @apply italic;
+}

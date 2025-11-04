@@ -36,13 +36,13 @@ export const TaskForm = ({onTaskCreated}: TaskFormProps) => {
   return (
     <form
       onSubmit={handleSubmit}
-      className='task-form'
+      className='task-form form-container'
     >
-      <h3 className='task-form-title'>
+      <h3 className='form-title'>
         Добавить новую задачу
       </h3>
 
-      <div className='task-form-fields'>
+      <div className='form-fields'>
         <div>
           <input
             type='text'

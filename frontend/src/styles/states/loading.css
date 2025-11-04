@@ -1,5 +1,5 @@
-/* Состояние загрузки */
-.loading-state {
+/* Состояния загрузки */
+.loading-full {
     @apply min-h-screen flex items-center justify-center bg-gray-50;
 }
 
@@ -8,13 +8,5 @@
 }
 
 .loading-spinner {
-    @apply flex justify-center items-center min-h-screen;
-}
-
-.spinner {
     @apply animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500;
-}
-
-.loading-button {
-    @apply opacity-70 cursor-not-allowed;
 }

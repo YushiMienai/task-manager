@@ -1,0 +1,53 @@
+/* Макетные стили */
+.page-container {
+    @apply min-h-screen bg-gray-50;
+}
+
+.content-container {
+    @apply container mx-auto px-4 py-8 max-w-6xl;
+}
+
+/* Специфичный для логина */
+.login-page-container {
+    @apply min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8;
+}
+
+.login-container {
+    @apply max-w-md w-full space-y-8;
+}
+
+.grid-layout {
+    @apply grid grid-cols-1 lg:grid-cols-3 gap-8;
+}
+
+.grid-sidebar {
+    @apply lg:col-span-1;
+}
+
+.grid-main {
+    @apply lg:col-span-2;
+}
+
+.page-header {
+    @apply text-center mb-12;
+}
+
+.page-header-main {
+    @apply flex justify-between items-center mb-4;
+}
+
+.page-header-title {
+    @apply text-4xl font-bold text-gray-800;
+}
+
+.page-header-user {
+    @apply flex items-center gap-4;
+}
+
+.page-header-greeting {
+    @apply text-gray-600;
+}
+
+.page-header-subtitle {
+    @apply text-xl text-gray-600;
+}

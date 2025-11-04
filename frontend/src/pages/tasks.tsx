@@ -29,8 +29,8 @@ export const TasksPage = () => {
   }
 
   return (
-    <div className='min-h-screen bg-gray-50'>
-      <div className='container mx-auto px-4 py-8 max-w-6xl'>
+    <div className='page-container'>
+      <div className='content-container'>
         <PageHeader onLogout={handleLogout} />
 
         {error && (
@@ -40,12 +40,12 @@ export const TasksPage = () => {
           />
         )}
 
-        <div className='grid grid-cols-1 lg:grid-cols-3 gap-8'>
-          <div className='lg:col-span-1'>
+        <div className='grid-layout'>
+          <div className='grid-sidebar'>
             <TaskForm onTaskCreated={createTask} />
           </div>
 
-          <div className='lg:col-span-2'>
+          <div className='grid-main'>
             <TaskList
               tasks={tasks}
               filter={filter}

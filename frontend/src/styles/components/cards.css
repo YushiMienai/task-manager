@@ -1,0 +1,53 @@
+/* Карточки */
+.card {
+    @apply bg-white rounded-lg shadow-md p-6;
+}
+
+.card-hover {
+    @apply hover:shadow-lg transition-shadow duration-200;
+}
+
+/* Карточка задачи */
+.task-card {
+    @apply bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow duration-200;
+}
+
+.task-card-header {
+    @apply flex justify-between items-center mb-3;
+}
+
+.task-card-title {
+    @apply text-lg font-semibold text-gray-800 flex-1 pr-2;
+}
+
+.task-card-actions {
+    @apply flex gap-2;
+}
+
+.task-card-action-button {
+    @apply text-gray-400 disabled:text-gray-300;
+}
+
+.task-card-action-edit {
+    @apply hover:text-blue-500 hover:bg-blue-50;
+}
+
+.task-card-action-delete {
+    @apply hover:text-red-500 hover:bg-red-50;
+}
+
+.task-card-description {
+    @apply text-gray-600 mb-4 leading-relaxed;
+}
+
+.task-card-meta {
+    @apply text-sm text-gray-500 mb-4;
+}
+
+.task-card-footer {
+    @apply flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3;
+}
+
+.task-card-status-buttons {
+    @apply flex flex-wrap gap-2;
+}

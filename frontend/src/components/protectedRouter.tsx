@@ -1,4 +1,4 @@
-import {ReactNode, useEffect} from 'react'
+import {ReactNode} from 'react'
 import {Navigate, useLocation} from 'react-router-dom'
 import {useAuth} from '@hooks'
 
@@ -12,8 +12,8 @@ export const ProtectedRoute = ({children}: ProtectedRouteProps) => {
 
   if (isLoading) {
     return (
-      <div className="auth-loading">
-        <div className="auth-spinner"></div>
+      <div className='loading-full'>
+        <div className='loading-spinner'></div>
       </div>
     )
   }
@@ -22,7 +22,7 @@ export const ProtectedRoute = ({children}: ProtectedRouteProps) => {
     return (
       <Navigate
         replace
-        to="/login"
+        to='/login'
         state={{from: location}}
       />
     )

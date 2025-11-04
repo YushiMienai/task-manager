@@ -1,10 +1,6 @@
 /* Адаптивные утилиты */
-.responsive-flex-row {
+.responsive-row {
     @apply flex flex-col sm:flex-row sm:items-center sm:justify-between;
-}
-
-.responsive-flex-col {
-    @apply flex flex-col;
 }
 
 .responsive-gap {

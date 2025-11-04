@@ -1,18 +1,23 @@
 @import "tailwindcss";
 
-/* Импорт всех стилей */
+/* Компоненты */
 @import "./components/buttons.css";
-@import "./components/modals.css";
 @import "./components/forms.css";
+@import "./components/cards.css";
+@import "./components/modals.css";
+@import "./components/alerts.css";
+@import "./components/layout.css";
+@import "./components/status.css";
+@import "./components/filters.css";
 @import "./components/taskList.css";
-@import "./components/taskCard.css";
-@import "./components/auth.css";
-@import "./components/errorAlert.css";
-@import "./components/pageHeader.css";
-@import "./components/login.css";
 
+/* Страницы */
+@import "./pages/tasks.css";
+
+/* Состояния */
 @import "./states/loading.css";
-@import "./states/emptyStates.css";
+@import "./states/empty.css";
 
+/* Утилиты */
 @import "./utilities/responsive.css";
 @import "./utilities/themes.css";

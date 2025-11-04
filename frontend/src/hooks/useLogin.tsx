@@ -16,7 +16,7 @@ export const useLogin = () => {
     } catch (err: any) {
       const errorMessage = err.response?.data?.detail || err.message || 'Ошибка авторизации'
       setError(errorMessage)
-      throw err // Пробрасываем ошибку дальше для обработки в компоненте
+      throw err
     } finally {
       setIsLoading(false)
     }
