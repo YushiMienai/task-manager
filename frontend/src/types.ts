@@ -19,3 +19,8 @@ export interface TaskUpdate {
   description?: string
   status?: TaskStatus
 }
+
+export interface User {
+  user_id: number
+  username: string;
+}

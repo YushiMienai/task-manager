@@ -1,24 +1,21 @@
-import {BrowserRouter as Router, Routes, Route, Navigate} from 'react-router-dom'
-import {useAuth} from '@hooks'
-import {LoginPage, TasksPage} from '@pages'
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import {ProtectedRoute} from '@components'
+import {TasksPage, LoginPage} from '@pages'
 
 function App() {
-  const {isAuthenticated} = useAuth()
-
   return (
     <Router>
-      <div className='min-h-screen bg-gray-100'>
+      <div className="App">
         <Routes>
-          <Route path='/login' element={
-            isAuthenticated ? <Navigate to='/' replace /> : <LoginPage />
-          } />
-          <Route path='/' element={
-            <ProtectedRoute>
-              <TasksPage />
-            </ProtectedRoute>
-          } />
-          <Route path='*' element={<Navigate to='/' replace />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route
+            path="/"
+            element={
+              <ProtectedRoute>
+                <TasksPage />
+              </ProtectedRoute>
+            }
+          />
         </Routes>
       </div>
     </Router>

@@ -1,83 +1,37 @@
-import {FormEvent, useState} from 'react'
 import {useNavigate} from 'react-router-dom'
-import {useAuth} from '@hooks'
+import {LoginForm, LoginHeader, LoginHint} from '@components'
+import {useLogin} from '@hooks'
+import {LoginData} from '@services'
 
 export const LoginPage = () => {
-  const [username, setUsername] = useState('')
-  const [password, setPassword] = useState('')
-  const [isLoading, setIsLoading] = useState(false)
-  const [error, setError] = useState('')
-
-  const {login} = useAuth()
   const navigate = useNavigate()
+  const {isLoading, error, handleLogin, clearError} = useLogin()
 
-  const handleSubmit = async (e: FormEvent) => {
-    e.preventDefault()
-    setIsLoading(true)
-    setError('')
-
+  const handleSubmit = async (credentials: LoginData) => {
     try {
-      await login({username, password})
+      await handleLogin(credentials)
       navigate('/')
-    } catch (err: any) {
-      setError(err.response?.data?.detail || 'Ошибка авторизации')
-    } finally {
-      setIsLoading(false)
+    } catch {
+      // Ошибка уже обработана в хуке useLogin
     }
   }
 
-  return (
-    <div className='min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8'>
-      <div className='max-w-md w-full space-y-8'>
-        <div>
-          <h2 className='mt-6 text-center text-3xl font-extrabold text-gray-900'>
-            Вход в Task Manager
-          </h2>
-        </div>
-        <form className='mt-8 space-y-6' onSubmit={handleSubmit}>
-          {error && (
-            <div className='bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded'>
-              {error}
-            </div>
-          )}
-          <div className='rounded-md shadow-sm -space-y-px'>
-            <div>
-              <input
-                type='text'
-                required
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-                className='appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm'
-                placeholder='Имя пользователя'
-              />
-            </div>
-            <div>
-              <input
-                type='password'
-                required
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                className='appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm'
-                placeholder='Пароль'
-              />
-            </div>
-          </div>
+  const testCredentials: LoginData = {
+    username: 'testuser',
+    password: 'testpassword'
+  }
 
-          <div>
-            <button
-              type='submit'
-              disabled={isLoading}
-              className='button group relative w-full flex justify-center border border-transparent text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:bg-gray-400 disabled:cursor-not-allowed'
-            >
-              {isLoading ? 'Вход...' : 'Войти'}
-            </button>
-          </div>
-        </form>
-        <div className='text-center'>
-          <p className='text-sm text-gray-600'>
-            Тестовый аккаунт: testuser / testpassword
-          </p>
-        </div>
+  return (
+    <div className='login-page'>
+      <div className='login-container'>
+        <LoginHeader />
+        <LoginForm
+          onSubmit={handleSubmit}
+          isLoading={isLoading}
+          error={error}
+          onErrorDismiss={clearError}
+        />
+        <LoginHint credentials={testCredentials} />
       </div>
     </div>
   )

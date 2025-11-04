@@ -1,0 +1,11 @@
+.error-alert {
+    @apply bg-red-500 text-white p-4 rounded-lg mb-6 flex justify-between items-center;
+}
+
+.error-alert-message {
+    @apply text-white;
+}
+
+.error-alert-dismiss {
+    @apply text-white hover:text-gray-200 text-xl cursor-pointer;
+}

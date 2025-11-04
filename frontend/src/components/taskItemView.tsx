@@ -1,6 +1,7 @@
 import {useState} from 'react'
 import {Task, TaskStatus} from '@types'
 import {DeleteConfirmationModal} from './DeleteConfirmationModal'
+import {Icon} from './icon'
 
 interface TaskItemViewProps {
   task: Task
@@ -60,22 +61,18 @@ export const TaskItemView = ({task, isUpdating, onEdit, onStatusChange, onDelete
             <button
               onClick={onEdit}
               disabled={isUpdating}
-              className='small-button text-gray-400 hover:text-blue-500 hover:bg-blue-50 disabled:text-gray-300'
+              className='task-card-action-button task-card-action-edit'
               title='Редактировать задачу'
             >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
-              </svg>
+              <Icon name="edit" />
             </button>
             <button
               onClick={handleDeleteClick}
               disabled={isUpdating}
-              className='small-button text-gray-400 hover:text-red-500 hover:bg-red-50 disabled:text-gray-300'
+              className='task-card-action-button task-card-action-delete'
               title='Удалить задачу'
             >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-              </svg>
+              <Icon name="delete" />
             </button>
           </div>
         </div>
@@ -95,14 +92,14 @@ export const TaskItemView = ({task, isUpdating, onEdit, onStatusChange, onDelete
             {currentStatusConfig.label}
           </div>
 
-          <div className='flex flex-wrap gap-2'>
+          <div className='task-card-status-buttons'>
             {Object.entries(statusConfigs).map(([status, config]) =>
                 task.status !== status && (
                   <button
                     key={status}
                     onClick={() => onStatusChange(status as TaskStatus)}
                     disabled={isUpdating}
-                    className={`button text-sm ${config.buttonClass} text-white`}
+                    className={`status-change-button ${config.buttonClass}`}
                   >
                     {config.buttonText}
                   </button>

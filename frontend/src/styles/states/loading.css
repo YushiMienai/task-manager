@@ -1,4 +1,12 @@
 /* Состояние загрузки */
+.loading-state {
+    @apply min-h-screen flex items-center justify-center bg-gray-50;
+}
+
+.loading-text {
+    @apply text-lg text-gray-600;
+}
+
 .loading-spinner {
     @apply flex justify-center items-center min-h-screen;
 }

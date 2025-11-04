@@ -7,6 +7,9 @@
 @import "./components/taskList.css";
 @import "./components/taskCard.css";
 @import "./components/auth.css";
+@import "./components/errorAlert.css";
+@import "./components/pageHeader.css";
+@import "./components/login.css";
 
 @import "./states/loading.css";
 @import "./states/emptyStates.css";

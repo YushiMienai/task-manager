@@ -4,7 +4,7 @@
 }
 
 .task-card-header {
-    @apply flex justify-between items-start mb-3;
+    @apply flex justify-between items-center mb-3;
 }
 
 .task-card-title {
@@ -13,6 +13,18 @@
 
 .task-card-actions {
     @apply flex gap-2;
+}
+
+.task-card-action-button {
+    @apply cursor-pointer p-2 rounded transition-colors duration-200 text-gray-400 disabled:text-gray-300 disabled:cursor-not-allowed;
+}
+
+.task-card-action-edit {
+    @apply hover:text-blue-500 hover:bg-blue-50;
+}
+
+.task-card-action-delete {
+    @apply hover:text-red-500 hover:bg-red-50;
 }
 
 .task-card-description {
@@ -25,6 +37,10 @@
 
 .task-card-footer {
     @apply flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3;
+}
+
+.task-card-status-buttons {
+    @apply flex flex-wrap gap-2;
 }
 
 /* Бейджи статусов задач */
@@ -46,13 +62,17 @@
 
 /* Кнопки смены статуса */
 .status-button-pending {
-    @apply bg-yellow-500 text-white hover:bg-yellow-600;
+    @apply bg-yellow-500 hover:bg-yellow-600;
 }
 
 .status-button-in-progress {
-    @apply bg-blue-500 text-white hover:bg-blue-600;
+    @apply bg-blue-500 hover:bg-blue-600;
 }
 
 .status-button-done {
-    @apply bg-green-500 text-white hover:bg-green-600;
+    @apply bg-green-500 hover:bg-green-600;
+}
+
+.status-change-button {
+    @apply cursor-pointer px-3 py-2 text-sm font-medium text-white rounded-md transition-colors duration-200 disabled:bg-gray-400 disabled:cursor-not-allowed;
 }

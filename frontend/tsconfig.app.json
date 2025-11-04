@@ -30,7 +30,8 @@
       "@types": ["./src/types"],
       "@services": ["./src/services"],
       "@hooks": ["./src/hooks"],
-      "@pages": ["./src/pages"]
+      "@pages": ["./src/pages"],
+      "@constants": ["./src/constants"],
     }
   },
   "include": ["src"]

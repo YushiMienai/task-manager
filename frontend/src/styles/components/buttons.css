@@ -12,12 +12,20 @@
 }
 
 .small-button:disabled {
-    @apply bg-transparent;
+    @apply bg-transparent opacity-50 cursor-not-allowed;
 }
 
 /* Цветовые темы кнопок */
 .button-primary {
-    @apply bg-blue-500 text-white font-medium hover:bg-blue-600;
+    @apply bg-blue-500 text-white font-medium;
+}
+
+.button-primary:hover:not(:disabled) {
+    @apply bg-blue-600;
+}
+
+.button-primary:disabled {
+    @apply bg-gray-400 cursor-not-allowed;
 }
 
 .button-danger {
@@ -26,4 +34,13 @@
 
 .button-secondary {
     @apply text-gray-700 bg-gray-100 hover:bg-gray-200;
+}
+
+/* Специфичные кнопки */
+.button-login {
+    @apply w-full font-medium border border-transparent text-sm text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500;
+}
+
+.button-login:disabled {
+    @apply bg-gray-400 cursor-not-allowed;
 }
